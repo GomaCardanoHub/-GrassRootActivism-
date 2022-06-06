@@ -1,1 +1,1 @@
-# -GrassRootActivism-
+# GrassRootActivism
