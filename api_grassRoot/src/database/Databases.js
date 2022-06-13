@@ -29,5 +29,4 @@ item.sequelize.sync({ force: true }).then(() => {
 }).catch((error) => {
     console.log(`Failed to sync... ${error}`);
 });
-
 module.exports = item;
