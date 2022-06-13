@@ -25,6 +25,7 @@ sequelize.authenticate().then(() => {
 });
 item.Sequelize = Sequelize;
 item.sequelize = sequelize;
+
 item.identifiers = require(`../model/ModelIdentifier`)(sequelize, DataTypes);
 item.zode = require(`../model/ModelZone`)(sequelize, DataTypes);
 item.organisation = require(`../model/ModelOrganisation`)(sequelize, DataTypes);
