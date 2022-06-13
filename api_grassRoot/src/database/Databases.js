@@ -23,6 +23,12 @@ sequelize.authenticate().then(() => {
 }).catch((error) => {
      console.log(`Failed to connect... ${error}`);
 });
+item.Sequelize = Sequelize;
+item.sequelize = sequelize;
+item.identifiers = require(`../model/ModelIdentifier`)(sequelize, DataTypes);
+item.zode = require(`../model/ModelZone`)(sequelize, DataTypes);
+item.organisation = require(`../model/ModelOrganisation`)(sequelize, DataTypes);
+item.informations = require(`../model/ModelInformation`)(sequelize, DataTypes);
  
 item.sequelize.sync({ force: true }).then(() => {
     console.log(`Yes re-sync done...`);
