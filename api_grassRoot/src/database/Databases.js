@@ -1,40 +1,43 @@
-const url = require('../../config/dbConfig');
-const { Sequelize,DataTypes} = require('sequelize');
-const item = {};
-const sequelize = Sequelize(
-    url.DB,
-    url.USER,
-    url.PASSWORD,
-    {
-        host: url.HOST,
-        dialect: url.dialect,
-        operatorsAliases: 0,
-        port: url.PORT,
-        pool: {
-            max: db.pool.max,
-            min: db.pool.min,
-            acquire: db.pool.acquire,
-            idle: db.pool.idle,
-        }
-    }
-);
-sequelize.authenticate().then(() => {
-    console.log("Connected...");
-}).catch((error) => {
-     console.log(`Failed to connect... ${error}`);
-});
-item.Sequelize = Sequelize;
-item.sequelize = sequelize;
+const url = require('../../config/dbConfig')
+const { Sequelize, DataTypes } = require('sequelize')
+const item = {}
+const sequelize = Sequelize(url.DB, url.USER, url.PASSWORD, {
+  host: url.HOST,
+  dialect: url.dialect,
+  operatorsAliases: 0,
+  port: url.PORT,
+  pool: {
+    max: db.pool.max,
+    min: db.pool.min,
+    acquire: db.pool.acquire,
+    idle: db.pool.idle,
+  },
+})
+sequelize
+  .authenticate()
+  .then(() => {
+    console.log('Connected...')
+  })
+  .catch((error) => {
+    console.log(`Failed to connect... ${error}`)
+  })
+item.Sequelize = Sequelize
+item.sequelize = sequelize
 
-item.participant = require(`../model/ModelParticipant`)(sequelize, DataTypes);
-item.zode = require(`../model/ModelZone`)(sequelize, DataTypes);
-item.organisation = require(`../model/ModelOrganisation`)(sequelize, DataTypes);
-item.evenement = require(`../model/ModelEvenement`)(sequelize, DataTypes);
- 
-item.sequelize.sync({ force: true }).then(() => {
-    console.log(`Yes re-sync done...`);
-}).catch((error) => {
-    console.log(`Failed to sync... ${error}`);
-});
+item.participant = require(`../model/ModelParticipant`)(sequelize, DataTypes)
+item.participer = require(`../model/ModelParticiper`)(sequelize, DataTypes)
+item.budget = require(`../model/ModelBudget`)(sequelize, DataTypes)
+item.zone = require(`../model/ModelZone`)(sequelize, DataTypes)
+item.organisation = require(`../model/ModelOrganisation`)(sequelize, DataTypes)
+item.evenement = require(`../model/ModelEvenement`)(sequelize, DataTypes)
 
-module.exports = item;
+item.sequelize
+  .sync({ force: true })
+  .then(() => {
+    console.log(`Yes re-sync done...`)
+  })
+  .catch((error) => {
+    console.log(`Failed to sync... ${error}`)
+  })
+
+module.exports = item
