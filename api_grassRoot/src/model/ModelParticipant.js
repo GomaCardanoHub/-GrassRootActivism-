@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Identifier = sequelize.define("tbIdentifier", {
+  const Identifier = sequelize.define("Participant", {
     code: {
       type: DataTypes.INTEGER,
       allowNull: true,

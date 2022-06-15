@@ -1,15 +1,17 @@
 module.exports = (sequelize, DataTypes) => {
-    const participer = sequelize.define('Participer', {
-        code: {
-            type: DataTypes.INTEGER,
-            allowNull: true,
-            autoIncrement: true,
-            primaryKey: true
-        },
-        types: DataTypes.STRING,
-        montant: {
-            type: DataTypes.FLOAT,
-            default:0
-        },
-    });
+  const participer = sequelize.define('Participer', {
+    code: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+    types: DataTypes.STRING,
+    montant: {
+      type: DataTypes.FLOAT,
+      default: 0,
+    },
+    codeEvenement: DataTypes.INTEGER,
+  })
+  return participer
 }
