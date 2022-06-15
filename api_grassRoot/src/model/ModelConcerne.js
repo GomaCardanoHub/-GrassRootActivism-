@@ -6,8 +6,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
       autoIncrement: true,
     },
-    codeIdentifier: DataTypes.INTEGER,
-    codeInformation: DataTypes.INTEGER,
+    codeEvenement: DataTypes.INTEGER,
     codeZones: DataTypes.INTEGER,
   });
   return Concerned;
