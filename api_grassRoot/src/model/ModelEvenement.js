@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const Information = sequelize.define('Evenement', {
+    const evenement = sequelize.define('Evenement', {
         code: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
@@ -8,8 +8,9 @@ module.exports = (sequelize, DataTypes) => {
         },
         title: DataTypes.STRING,
         context: DataTypes.STRING,
+        dateAdd: DataTypes.STRING,
         codeOrganisation: DataTypes.INTEGER,
 
     });
-    return Information;
+    return evenement;
 }
