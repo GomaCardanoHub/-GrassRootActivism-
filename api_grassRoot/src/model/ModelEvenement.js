@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const Information = sequelize.define('tbInformations', {
+    const Information = sequelize.define('Evenement', {
         code: {
             type: DataTypes.INTEGER,
             autoIncrement: true,

@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const Zone = sequelize.define('tbZone', {
+    const Zone = sequelize.define('Zone', {
         code: {
             type: DataTypes.INTEGER,
             autoIncrement: true,

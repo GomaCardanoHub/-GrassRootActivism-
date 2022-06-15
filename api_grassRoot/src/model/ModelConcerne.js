@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Concerned = sequelize.define("tbConcerne", {
+  const Concerned = sequelize.define("Concerne", {
     code: {
       type: DataTypes.INTEGER,
       primaryKey: true,
