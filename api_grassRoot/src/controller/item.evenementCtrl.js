@@ -57,7 +57,7 @@ item.deleteEvenement = async (req, res) => {
         .status(200)
         .json({ msg: `Suppression reussi avec succes`, data: data })
     } else {
-      return res.status(200).json({ msg: `Suppression echoue`, data: null })
+      return res.status(400).json({ msg: `Suppression echoue`, data: null })
     }
   } catch (error) {
     return res.status(500).json({ msg: `${error}`, data: null })
@@ -69,11 +69,11 @@ item.findEvenement = async (req, res) => {
     if (data) {
       return res.status(200).json({ msg: `Liste de evenement `, data: data })
     } else {
-      return res.status(404).json({ msg: `Not Found`, data: null })
+      return res.status(404).json({ msg: `Not Data`, data: null })
     }
   } catch (error) {
     return res.status(500).json({ msg: `${error}`, data: null })
   }
 }
 
-module.exports =item
+module.exports = item
