@@ -1,6 +1,6 @@
-const { where } = require('sequelize/types')
 const { zone } = require('../database/Databases')
 const item = {}
+
 item.addZone = async (req, res) => {
   try {
     const { designation, long, lat } = req.body
@@ -75,5 +75,4 @@ item.findZone = async (req, res) => {
     return res.status(500).json({ msg: error, data: null })
   }
 }
-
 module.exports = item

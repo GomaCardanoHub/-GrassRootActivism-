@@ -6,12 +6,12 @@ item.addParticipant = async (req, res) => {
   try {
     const { nomComplet, sexe, dateLieu, tel, mail, address } = req.body
     const data = await participant.create({
-      nomComplet,
-      sexe,
-      dateLieu,
-      tel,
-      mail,
-      address,
+      nomComplet:nomComplet,
+      sexe:sexe,
+      dateLieu:dateLieu,
+      tel:tel,
+      mail:mail,
+      address:address,
     })
 
     if (data) {
