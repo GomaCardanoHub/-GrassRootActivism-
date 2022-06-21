@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Orgasations = Sequelize.define('tbOrgasation', {
+  const Orgasations = Sequelize.define('Orgasation', {
     code: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true,
     },
     designation: DataTypes.STRING,
-    designation: DataTypes.STRING,
+    descrignation: DataTypes.STRING,
   })
   return Orgasations
 }
