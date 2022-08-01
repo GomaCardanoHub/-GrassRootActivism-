@@ -16,7 +16,7 @@ item.addParticiper = async (req, res) => {
     return res.status(500).json({ msg: error, data: null })
   }
 }
-item.updateParticipant = async (req, res) => {
+item.updateParticiper = async (req, res) => {
   try {
     const code = req.params.id
     const { date, type, montant } = req.body
@@ -48,7 +48,7 @@ item.deleteParticiper = async (req, res) => {
     }
   } catch (error) {
     return res.status(500).json({ msg: error })
-    ß
+    
   }
 }
 module.exports = item

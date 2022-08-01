@@ -1,16 +1,16 @@
 const url = require('../../config/dbConfig')
 const { Sequelize, DataTypes } = require('sequelize')
 const item = {}
-const sequelize = Sequelize(url.DB, url.USER, url.PASSWORD, {
+const sequelize =new Sequelize(url.DB, url.USER, url.PASSWORD, {
   host: url.HOST,
   dialect: url.dialect,
   operatorsAliases: 0,
   port: url.PORT,
   pool: {
-    max: db.pool.max,
-    min: db.pool.min,
-    acquire: db.pool.acquire,
-    idle: db.pool.idle,
+    max: url.pool.max,
+    min: url.pool.min,
+    acquire: url.pool.acquire,
+    idle: url.pool.idle,
   },
 })
 sequelize
