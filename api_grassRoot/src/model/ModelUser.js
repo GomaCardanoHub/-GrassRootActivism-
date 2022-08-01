@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       username: DataTypes.STRING,
       password: DataTypes.STRING,
+      codeAgent: DataTypes.INTEGER,
     });
     return user;
   };

@@ -30,6 +30,8 @@ item.budget = require(`../model/ModelBudget`)(sequelize, DataTypes)
 item.zone = require(`../model/ModelZone`)(sequelize, DataTypes)
 item.organisation = require(`../model/ModelOrganisation`)(sequelize, DataTypes)
 item.evenement = require(`../model/ModelEvenement`)(sequelize, DataTypes)
+item.users = require(`../model/ModelUser`)(sequelize, DataTypes)
+item.agents = require(`../model/ModelAgent`)(sequelize, DataTypes)
 
 item.sequelize
   .sync({ force: true })
