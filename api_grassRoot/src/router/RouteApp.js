@@ -3,6 +3,8 @@ const even = require('../controller/item.evenementCtrl');
 const participant = require('../controller/item.participantCtrl');
 const participer = require('../controller/item.participerCtrl');
 const zone = require('../controller/item.zone');
+const budget = require('../controller/item.budgetCtrl');
+const organization = require('../controller/item.organisationsCtrl');
 const router = express.Router();
 
 router.post('/evenement/add', even.addEvenement);//Add evenement 
@@ -24,6 +26,18 @@ router.post('/zone/add', zone.addZone);//
 router.get('/zone/find', zone.findZone);//
 router.post('/zone/update/:code', zone.updateZone);//
 router.post('/zone/delete/:code', zone.deleteZone);//
+
+
+router.post('/budget/add', budget.addbudget);//
+router.get('/budget/find', budget.findAllbudget);//
+router.post('/budget/update/:id', budget.updatebudget);//
+router.post('/budget/delete/:id', budget.deletebudget);//
+
+
+router.post('/organization/add', organization.addorganisation);//
+router.get('/organization/find', organization.findAllorganisation);//
+router.post('/organization/update/:code', organization.updateorganisation);//
+router.post('/organization/delete/:code', organization.deleteorganisation);//
 
 
 module.exports=router;
