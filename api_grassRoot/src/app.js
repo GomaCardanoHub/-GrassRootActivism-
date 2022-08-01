@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const db = require('./database/Databases');
 const router=require('./router/RouteApp');
+const  dotenv=require('dotenv');
+dotenv.config();
 const app = express();
 var corsOptions = {
   origin: "http://localhost:4200" 
@@ -23,5 +25,5 @@ app.use((req, res, next) => {
 });
 app.use('./src/uploads/', express.static('uploads'));
 app.use('/api/v1', router)
-const port = process.env.PORT || 5000;
-app.listen(port, () => console.log(`serveur disponible.... ${port}`));
+const port = process.env.PORT||5000;
+const server =app.listen(port, () => console.log(`serveur disponible.... ${server.address().port}`));
