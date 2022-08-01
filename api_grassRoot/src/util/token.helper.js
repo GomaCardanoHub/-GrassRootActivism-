@@ -33,13 +33,13 @@ itemToken.generateToken = ((id,username) => {
      const token=autoHead.split(" ")[1];
       verify(token, JWT_KEY,(error,user)=>{
         if(error){
-          return res.status(403).json({msg:`Token is not valid`,contents:{},token:"NO"});
+          return res.status(403).json({msg:`Token is not valid`,data:{},token:"NO"});
         }
         req.user=user;
         next();
       });
    }else{
-     res.status(401).json({msg:`Your not authentificated`,contents:{},token:'NO'});
+     res.status(401).json({msg:`Your not authentificated`,data:{},token:'NO'});
    }
  
  };

@@ -77,7 +77,7 @@ item.deleteusers = async (req, res) => {
 }
 
 
-item.authenticateUser = (req, res) => {
+item.authenticateUser = async(req, res) => {
     try {
         const { username, password } = req.body;
         const data = await users.findOne({ where: { username: username } });
